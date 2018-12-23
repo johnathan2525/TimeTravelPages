@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTravelPages", "TimeTravelPages\TimeTravelPages.csproj", "{889069AB-7FF4-4100-A9E0-0EBC98255DEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{889069AB-7FF4-4100-A9E0-0EBC98255DEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{889069AB-7FF4-4100-A9E0-0EBC98255DEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{889069AB-7FF4-4100-A9E0-0EBC98255DEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{889069AB-7FF4-4100-A9E0-0EBC98255DEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
