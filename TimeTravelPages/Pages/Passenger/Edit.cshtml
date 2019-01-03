@@ -1,0 +1,49 @@
+@page "{id:int}"
+@model EditModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Edit Passenger";
+}
+
+<h1>Edit Passenger - @Model.Passenger.Id</h1>
+<form method="post" class="form">
+
+    <div asp-validation-summary="All"></div>
+    <input asp-for="Passenger.Id" type="hidden"/>
+
+    <div class="form-group">
+        <label asp-for="Passenger.Name"></label>
+        <div>
+            <input asp-for="Passenger.Name" class="form-control"/>
+            <span asp-validation-for="Passenger.Name"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Passenger.PositionInTime"></label>
+        <div>
+            <input asp-for="Passenger.PositionInTime" class="form-control"/>
+            <span asp-validation-for="Passenger.PositionInTime"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Passenger.Destination"></label>
+        <div>
+            <input asp-for="Passenger.Destination" class="form-control"/>
+            <span asp-validation-for="Passenger.Destination"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Passenger.TransporterId"></label>
+        <div>
+            <select asp-for="Passenger.TransporterId" class="form-control" asp-items="(SelectList)@ViewData["Transporters"]"></select>
+            <span asp-validation-for="Passenger.TransporterId"></span>
+        </div>
+    </div>
+
+    <div>
+        <button class="btn btn-primary" type="submit">Save</button>
+    </div>
+</form>

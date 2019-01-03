@@ -9,8 +9,8 @@ using TimeTravelPages.Data;
 namespace TimeTravelPages.Migrations
 {
     [DbContext(typeof(TimeTravelContext))]
-    [Migration("20181223213010_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20181224172154_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -18,25 +18,10 @@ namespace TimeTravelPages.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.0-rtm-35687");
 
-            modelBuilder.Entity("TimeTravelPages.Data.Car", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Model")
-                        .IsRequired();
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Cars");
-                });
-
             modelBuilder.Entity("TimeTravelPages.Data.Passenger", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<int?>("CarId");
 
                     b.Property<string>("Destination")
                         .IsRequired();
@@ -46,18 +31,34 @@ namespace TimeTravelPages.Migrations
 
                     b.Property<DateTime>("PositionInTime");
 
+                    b.Property<int>("TransporterId");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CarId");
+                    b.HasIndex("TransporterId");
 
                     b.ToTable("Passengers");
                 });
 
+            modelBuilder.Entity("TimeTravelPages.Data.Transporter", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Transporters");
+                });
+
             modelBuilder.Entity("TimeTravelPages.Data.Passenger", b =>
                 {
-                    b.HasOne("TimeTravelPages.Data.Car", "Car")
+                    b.HasOne("TimeTravelPages.Data.Transporter", "Transporter")
                         .WithMany("Passengers")
-                        .HasForeignKey("CarId");
+                        .HasForeignKey("TransporterId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
