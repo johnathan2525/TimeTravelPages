@@ -6,7 +6,6 @@ namespace TimeTravelPages.Data
 {
     public class Passenger
     {
-
         public int Id { get; set; }
 
         [Required]
@@ -24,6 +23,6 @@ namespace TimeTravelPages.Data
         [ForeignKey("Transporter")]
         public int TransporterId { get; set; }
         public Transporter Transporter { get; set; }
-        
+
     }
 }

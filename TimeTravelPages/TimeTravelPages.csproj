@@ -16,6 +16,7 @@
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Pages\Passenger\" />
+    <Folder Include="Pages\Transporter" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="timetravel.sqlite" />

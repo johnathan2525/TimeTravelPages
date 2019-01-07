@@ -22,7 +22,7 @@ namespace TimeTravelPages.Data
                     var transporter = new Transporter
                     {
                         Name = "DeLorean"
-                    };    
+                    };
                     context.Transporters.Add(transporter);
 
 
@@ -67,8 +67,8 @@ namespace TimeTravelPages.Data
                     context.Passengers.Add(passenger);
 
                     var phoneBooth = await (from c in context.Transporters
-                                    where c.Name == "Phone Booth"
-                                    select c).SingleAsync();
+                                            where c.Name == "Phone Booth"
+                                            select c).SingleAsync();
 
                     passenger = new Passenger
                     {
